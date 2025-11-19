@@ -62,7 +62,7 @@ export default async function seedDemoData({ container }: ExecArgs) {
   const salesChannelModuleService = container.resolve(Modules.SALES_CHANNEL);
   const storeModuleService = container.resolve(Modules.STORE);
 
-  const countries = ["gb", "de", "dk", "se", "fr", "es", "it"];
+  const countries = ["vn"];
 
   logger.info("Seeding store data...");
   const [store] = await storeModuleService.listStores();
@@ -91,11 +91,8 @@ export default async function seedDemoData({ container }: ExecArgs) {
       store_id: store.id,
       supported_currencies: [
         {
-          currency_code: "eur",
+          currency_code: "vnd",
           is_default: true,
-        },
-        {
-          currency_code: "usd",
         },
       ],
     },
@@ -114,8 +111,8 @@ export default async function seedDemoData({ container }: ExecArgs) {
     input: {
       regions: [
         {
-          name: "Europe",
-          currency_code: "eur",
+          name: "Vietnam",
+          currency_code: "vnd",
           countries,
           payment_providers: ["pp_system_default"],
         },
@@ -141,10 +138,10 @@ export default async function seedDemoData({ container }: ExecArgs) {
     input: {
       locations: [
         {
-          name: "European Warehouse",
+          name: "Vietnam Warehouse",
           address: {
-            city: "Copenhagen",
-            country_code: "DK",
+            city: "Ho Chi Minh City",
+            country_code: "VN",
             address_1: "",
           },
         },
@@ -193,38 +190,14 @@ export default async function seedDemoData({ container }: ExecArgs) {
   }
 
   const fulfillmentSet = await fulfillmentModuleService.createFulfillmentSets({
-    name: "European Warehouse delivery",
+    name: "Vietnam Warehouse delivery",
     type: "shipping",
     service_zones: [
       {
-        name: "Europe",
+        name: "Vietnam",
         geo_zones: [
           {
-            country_code: "gb",
-            type: "country",
-          },
-          {
-            country_code: "de",
-            type: "country",
-          },
-          {
-            country_code: "dk",
-            type: "country",
-          },
-          {
-            country_code: "se",
-            type: "country",
-          },
-          {
-            country_code: "fr",
-            type: "country",
-          },
-          {
-            country_code: "es",
-            type: "country",
-          },
-          {
-            country_code: "it",
+            country_code: "vn",
             type: "country",
           },
         ],
@@ -256,11 +229,7 @@ export default async function seedDemoData({ container }: ExecArgs) {
         },
         prices: [
           {
-            currency_code: "usd",
-            amount: 10,
-          },
-          {
-            currency_code: "eur",
+            currency_code: "vnd",
             amount: 10,
           },
           {
@@ -294,11 +263,7 @@ export default async function seedDemoData({ container }: ExecArgs) {
         },
         prices: [
           {
-            currency_code: "usd",
-            amount: 10,
-          },
-          {
-            currency_code: "eur",
+            currency_code: "vnd",
             amount: 10,
           },
           {
@@ -378,6 +343,22 @@ export default async function seedDemoData({ container }: ExecArgs) {
           name: "Merch",
           is_active: true,
         },
+        {
+          name: "Accessories",
+          is_active: true,
+        },
+        {
+          name: "Shoes",
+          is_active: true,
+        },
+        {
+          name: "Hats",
+          is_active: true,
+        },
+        {
+          name: "Bags",
+          is_active: true,
+        },
       ],
     },
   });
@@ -430,12 +411,8 @@ export default async function seedDemoData({ container }: ExecArgs) {
               },
               prices: [
                 {
-                  amount: 10,
-                  currency_code: "eur",
-                },
-                {
-                  amount: 15,
-                  currency_code: "usd",
+                  amount: 180000,
+                  currency_code: "vnd",
                 },
               ],
             },
@@ -448,12 +425,8 @@ export default async function seedDemoData({ container }: ExecArgs) {
               },
               prices: [
                 {
-                  amount: 10,
-                  currency_code: "eur",
-                },
-                {
-                  amount: 15,
-                  currency_code: "usd",
+                  amount: 180000,
+                  currency_code: "vnd",
                 },
               ],
             },
@@ -466,12 +439,8 @@ export default async function seedDemoData({ container }: ExecArgs) {
               },
               prices: [
                 {
-                  amount: 10,
-                  currency_code: "eur",
-                },
-                {
-                  amount: 15,
-                  currency_code: "usd",
+                  amount: 180000,
+                  currency_code: "vnd",
                 },
               ],
             },
@@ -484,12 +453,8 @@ export default async function seedDemoData({ container }: ExecArgs) {
               },
               prices: [
                 {
-                  amount: 10,
-                  currency_code: "eur",
-                },
-                {
-                  amount: 15,
-                  currency_code: "usd",
+                  amount: 180000,
+                  currency_code: "vnd",
                 },
               ],
             },
@@ -502,12 +467,8 @@ export default async function seedDemoData({ container }: ExecArgs) {
               },
               prices: [
                 {
-                  amount: 10,
-                  currency_code: "eur",
-                },
-                {
-                  amount: 15,
-                  currency_code: "usd",
+                  amount: 180000,
+                  currency_code: "vnd",
                 },
               ],
             },
@@ -520,12 +481,8 @@ export default async function seedDemoData({ container }: ExecArgs) {
               },
               prices: [
                 {
-                  amount: 10,
-                  currency_code: "eur",
-                },
-                {
-                  amount: 15,
-                  currency_code: "usd",
+                  amount: 180000,
+                  currency_code: "vnd",
                 },
               ],
             },
@@ -538,12 +495,8 @@ export default async function seedDemoData({ container }: ExecArgs) {
               },
               prices: [
                 {
-                  amount: 10,
-                  currency_code: "eur",
-                },
-                {
-                  amount: 15,
-                  currency_code: "usd",
+                  amount: 180000,
+                  currency_code: "vnd",
                 },
               ],
             },
@@ -556,12 +509,8 @@ export default async function seedDemoData({ container }: ExecArgs) {
               },
               prices: [
                 {
-                  amount: 10,
-                  currency_code: "eur",
-                },
-                {
-                  amount: 15,
-                  currency_code: "usd",
+                  amount: 180000,
+                  currency_code: "vnd",
                 },
               ],
             },
@@ -606,12 +555,8 @@ export default async function seedDemoData({ container }: ExecArgs) {
               },
               prices: [
                 {
-                  amount: 10,
-                  currency_code: "eur",
-                },
-                {
-                  amount: 15,
-                  currency_code: "usd",
+                  amount: 220000,
+                  currency_code: "vnd",
                 },
               ],
             },
@@ -623,12 +568,8 @@ export default async function seedDemoData({ container }: ExecArgs) {
               },
               prices: [
                 {
-                  amount: 10,
-                  currency_code: "eur",
-                },
-                {
-                  amount: 15,
-                  currency_code: "usd",
+                  amount: 220000,
+                  currency_code: "vnd",
                 },
               ],
             },
@@ -640,12 +581,8 @@ export default async function seedDemoData({ container }: ExecArgs) {
               },
               prices: [
                 {
-                  amount: 10,
-                  currency_code: "eur",
-                },
-                {
-                  amount: 15,
-                  currency_code: "usd",
+                  amount: 220000,
+                  currency_code: "vnd",
                 },
               ],
             },
@@ -657,12 +594,8 @@ export default async function seedDemoData({ container }: ExecArgs) {
               },
               prices: [
                 {
-                  amount: 10,
-                  currency_code: "eur",
-                },
-                {
-                  amount: 15,
-                  currency_code: "usd",
+                  amount: 220000,
+                  currency_code: "vnd",
                 },
               ],
             },
@@ -707,12 +640,8 @@ export default async function seedDemoData({ container }: ExecArgs) {
               },
               prices: [
                 {
-                  amount: 10,
-                  currency_code: "eur",
-                },
-                {
-                  amount: 15,
-                  currency_code: "usd",
+                  amount: 280000,
+                  currency_code: "vnd",
                 },
               ],
             },
@@ -724,12 +653,8 @@ export default async function seedDemoData({ container }: ExecArgs) {
               },
               prices: [
                 {
-                  amount: 10,
-                  currency_code: "eur",
-                },
-                {
-                  amount: 15,
-                  currency_code: "usd",
+                  amount: 280000,
+                  currency_code: "vnd",
                 },
               ],
             },
@@ -741,12 +666,8 @@ export default async function seedDemoData({ container }: ExecArgs) {
               },
               prices: [
                 {
-                  amount: 10,
-                  currency_code: "eur",
-                },
-                {
-                  amount: 15,
-                  currency_code: "usd",
+                  amount: 280000,
+                  currency_code: "vnd",
                 },
               ],
             },
@@ -758,12 +679,8 @@ export default async function seedDemoData({ container }: ExecArgs) {
               },
               prices: [
                 {
-                  amount: 10,
-                  currency_code: "eur",
-                },
-                {
-                  amount: 15,
-                  currency_code: "usd",
+                  amount: 280000,
+                  currency_code: "vnd",
                 },
               ],
             },
@@ -808,12 +725,8 @@ export default async function seedDemoData({ container }: ExecArgs) {
               },
               prices: [
                 {
-                  amount: 10,
-                  currency_code: "eur",
-                },
-                {
-                  amount: 15,
-                  currency_code: "usd",
+                  amount: 160000,
+                  currency_code: "vnd",
                 },
               ],
             },
@@ -825,12 +738,8 @@ export default async function seedDemoData({ container }: ExecArgs) {
               },
               prices: [
                 {
-                  amount: 10,
-                  currency_code: "eur",
-                },
-                {
-                  amount: 15,
-                  currency_code: "usd",
+                  amount: 160000,
+                  currency_code: "vnd",
                 },
               ],
             },
@@ -842,12 +751,8 @@ export default async function seedDemoData({ container }: ExecArgs) {
               },
               prices: [
                 {
-                  amount: 10,
-                  currency_code: "eur",
-                },
-                {
-                  amount: 15,
-                  currency_code: "usd",
+                  amount: 160000,
+                  currency_code: "vnd",
                 },
               ],
             },
@@ -859,12 +764,444 @@ export default async function seedDemoData({ container }: ExecArgs) {
               },
               prices: [
                 {
-                  amount: 10,
-                  currency_code: "eur",
+                  amount: 160000,
+                  currency_code: "vnd",
                 },
+              ],
+            },
+          ],
+          sales_channels: [
+            {
+              id: defaultSalesChannel[0].id,
+            },
+          ],
+        },
+        {
+          title: "Medusa Hoodie",
+          category_ids: [
+            categoryResult.find((cat) => cat.name === "Sweatshirts")!.id,
+          ],
+          description:
+            "Premium quality hoodie with comfortable fit. Perfect for casual wear and everyday comfort.",
+          handle: "hoodie",
+          weight: 600,
+          status: ProductStatus.PUBLISHED,
+          shipping_profile_id: shippingProfile.id,
+          images: [
+            {
+              url: "https://medusa-public-images.s3.eu-west-1.amazonaws.com/sweatshirt-vintage-front.png",
+            },
+          ],
+          options: [
+            {
+              title: "Size",
+              values: ["S", "M", "L", "XL"],
+            },
+            {
+              title: "Color",
+              values: ["Black", "Gray", "Navy"],
+            },
+          ],
+          variants: [
+            {
+              title: "S / Black",
+              sku: "HOODIE-S-BLACK",
+              options: {
+                Size: "S",
+                Color: "Black",
+              },
+              prices: [
                 {
-                  amount: 15,
-                  currency_code: "usd",
+                  amount: 250000,
+                  currency_code: "vnd",
+                },
+              ],
+            },
+            {
+              title: "M / Black",
+              sku: "HOODIE-M-BLACK",
+              options: {
+                Size: "M",
+                Color: "Black",
+              },
+              prices: [
+                {
+                  amount: 250000,
+                  currency_code: "vnd",
+                },
+              ],
+            },
+            {
+              title: "L / Gray",
+              sku: "HOODIE-L-GRAY",
+              options: {
+                Size: "L",
+                Color: "Gray",
+              },
+              prices: [
+                {
+                  amount: 250000,
+                  currency_code: "vnd",
+                },
+              ],
+            },
+            {
+              title: "XL / Navy",
+              sku: "HOODIE-XL-NAVY",
+              options: {
+                Size: "XL",
+                Color: "Navy",
+              },
+              prices: [
+                {
+                  amount: 250000,
+                  currency_code: "vnd",
+                },
+              ],
+            },
+          ],
+          sales_channels: [
+            {
+              id: defaultSalesChannel[0].id,
+            },
+          ],
+        },
+        {
+          title: "Medusa Cap",
+          category_ids: [
+            categoryResult.find((cat) => cat.name === "Hats")!.id,
+          ],
+          description:
+            "Classic baseball cap with adjustable strap. Perfect for sunny days and casual style.",
+          handle: "cap",
+          weight: 150,
+          status: ProductStatus.PUBLISHED,
+          shipping_profile_id: shippingProfile.id,
+          images: [
+            {
+              url: "https://medusa-public-images.s3.eu-west-1.amazonaws.com/tee-black-front.png",
+            },
+          ],
+          options: [
+            {
+              title: "Color",
+              values: ["Black", "White", "Navy"],
+            },
+          ],
+          variants: [
+            {
+              title: "Black",
+              sku: "CAP-BLACK",
+              options: {
+                Color: "Black",
+              },
+              prices: [
+                {
+                  amount: 150000,
+                  currency_code: "vnd",
+                },
+              ],
+            },
+            {
+              title: "White",
+              sku: "CAP-WHITE",
+              options: {
+                Color: "White",
+              },
+              prices: [
+                {
+                  amount: 150000,
+                  currency_code: "vnd",
+                },
+              ],
+            },
+            {
+              title: "Navy",
+              sku: "CAP-NAVY",
+              options: {
+                Color: "Navy",
+              },
+              prices: [
+                {
+                  amount: 150000,
+                  currency_code: "vnd",
+                },
+              ],
+            },
+          ],
+          sales_channels: [
+            {
+              id: defaultSalesChannel[0].id,
+            },
+          ],
+        },
+        {
+          title: "Medusa Backpack",
+          category_ids: [
+            categoryResult.find((cat) => cat.name === "Bags")!.id,
+          ],
+          description:
+            "Durable backpack with multiple compartments. Ideal for work, travel, or everyday use.",
+          handle: "backpack",
+          weight: 800,
+          status: ProductStatus.PUBLISHED,
+          shipping_profile_id: shippingProfile.id,
+          images: [
+            {
+              url: "https://medusa-public-images.s3.eu-west-1.amazonaws.com/tee-black-front.png",
+            },
+          ],
+          options: [
+            {
+              title: "Color",
+              values: ["Black", "Gray"],
+            },
+          ],
+          variants: [
+            {
+              title: "Black",
+              sku: "BACKPACK-BLACK",
+              options: {
+                Color: "Black",
+              },
+              prices: [
+                {
+                  amount: 450000,
+                  currency_code: "vnd",
+                },
+              ],
+            },
+            {
+              title: "Gray",
+              sku: "BACKPACK-GRAY",
+              options: {
+                Color: "Gray",
+              },
+              prices: [
+                {
+                  amount: 450000,
+                  currency_code: "vnd",
+                },
+              ],
+            },
+          ],
+          sales_channels: [
+            {
+              id: defaultSalesChannel[0].id,
+            },
+          ],
+        },
+        {
+          title: "Medusa Polo Shirt",
+          category_ids: [
+            categoryResult.find((cat) => cat.name === "Shirts")!.id,
+          ],
+          description:
+            "Classic polo shirt made from premium cotton. Perfect for both casual and semi-formal occasions.",
+          handle: "polo-shirt",
+          weight: 300,
+          status: ProductStatus.PUBLISHED,
+          shipping_profile_id: shippingProfile.id,
+          images: [
+            {
+              url: "https://medusa-public-images.s3.eu-west-1.amazonaws.com/tee-white-front.png",
+            },
+          ],
+          options: [
+            {
+              title: "Size",
+              values: ["S", "M", "L", "XL"],
+            },
+            {
+              title: "Color",
+              values: ["White", "Navy", "Red"],
+            },
+          ],
+          variants: [
+            {
+              title: "M / White",
+              sku: "POLO-M-WHITE",
+              options: {
+                Size: "M",
+                Color: "White",
+              },
+              prices: [
+                {
+                  amount: 200000,
+                  currency_code: "vnd",
+                },
+              ],
+            },
+            {
+              title: "L / Navy",
+              sku: "POLO-L-NAVY",
+              options: {
+                Size: "L",
+                Color: "Navy",
+              },
+              prices: [
+                {
+                  amount: 200000,
+                  currency_code: "vnd",
+                },
+              ],
+            },
+            {
+              title: "XL / Red",
+              sku: "POLO-XL-RED",
+              options: {
+                Size: "XL",
+                Color: "Red",
+              },
+              prices: [
+                {
+                  amount: 200000,
+                  currency_code: "vnd",
+                },
+              ],
+            },
+          ],
+          sales_channels: [
+            {
+              id: defaultSalesChannel[0].id,
+            },
+          ],
+        },
+        {
+          title: "Medusa Jeans",
+          category_ids: [
+            categoryResult.find((cat) => cat.name === "Pants")!.id,
+          ],
+          description:
+            "Classic fit jeans with comfortable stretch. Versatile and durable for everyday wear.",
+          handle: "jeans",
+          weight: 500,
+          status: ProductStatus.PUBLISHED,
+          shipping_profile_id: shippingProfile.id,
+          images: [
+            {
+              url: "https://medusa-public-images.s3.eu-west-1.amazonaws.com/sweatpants-gray-front.png",
+            },
+          ],
+          options: [
+            {
+              title: "Size",
+              values: ["28", "30", "32", "34", "36"],
+            },
+            {
+              title: "Color",
+              values: ["Blue", "Black"],
+            },
+          ],
+          variants: [
+            {
+              title: "30 / Blue",
+              sku: "JEANS-30-BLUE",
+              options: {
+                Size: "30",
+                Color: "Blue",
+              },
+              prices: [
+                {
+                  amount: 350000,
+                  currency_code: "vnd",
+                },
+              ],
+            },
+            {
+              title: "32 / Blue",
+              sku: "JEANS-32-BLUE",
+              options: {
+                Size: "32",
+                Color: "Blue",
+              },
+              prices: [
+                {
+                  amount: 350000,
+                  currency_code: "vnd",
+                },
+              ],
+            },
+            {
+              title: "34 / Black",
+              sku: "JEANS-34-BLACK",
+              options: {
+                Size: "34",
+                Color: "Black",
+              },
+              prices: [
+                {
+                  amount: 350000,
+                  currency_code: "vnd",
+                },
+              ],
+            },
+          ],
+          sales_channels: [
+            {
+              id: defaultSalesChannel[0].id,
+            },
+          ],
+        },
+        {
+          title: "Medusa Water Bottle",
+          category_ids: [
+            categoryResult.find((cat) => cat.name === "Accessories")!.id,
+          ],
+          description:
+            "Eco-friendly reusable water bottle. Keep hydrated in style with this durable bottle.",
+          handle: "water-bottle",
+          weight: 250,
+          status: ProductStatus.PUBLISHED,
+          shipping_profile_id: shippingProfile.id,
+          images: [
+            {
+              url: "https://medusa-public-images.s3.eu-west-1.amazonaws.com/tee-black-front.png",
+            },
+          ],
+          options: [
+            {
+              title: "Color",
+              values: ["Black", "White", "Blue"],
+            },
+          ],
+          variants: [
+            {
+              title: "Black",
+              sku: "BOTTLE-BLACK",
+              options: {
+                Color: "Black",
+              },
+              prices: [
+                {
+                  amount: 120000,
+                  currency_code: "vnd",
+                },
+              ],
+            },
+            {
+              title: "White",
+              sku: "BOTTLE-WHITE",
+              options: {
+                Color: "White",
+              },
+              prices: [
+                {
+                  amount: 120000,
+                  currency_code: "vnd",
+                },
+              ],
+            },
+            {
+              title: "Blue",
+              sku: "BOTTLE-BLUE",
+              options: {
+                Color: "Blue",
+              },
+              prices: [
+                {
+                  amount: 120000,
+                  currency_code: "vnd",
                 },
               ],
             },

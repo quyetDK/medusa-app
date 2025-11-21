@@ -13,6 +13,9 @@ RUN yarn install
 # Copy source code
 COPY . .
 
+# Fix line endings for start.sh and make it executable
+RUN sed -i 's/\r$//' ./start.sh && chmod +x ./start.sh
+
 # Expose the port Medusa runs on
 EXPOSE 9000
 

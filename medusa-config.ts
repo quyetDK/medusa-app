@@ -16,5 +16,15 @@ module.exports = defineConfig({
       ssl: false,
       sslmode: "disable",
     },
-  }
+    
+  },
+  admin: {
+    vite: () => {
+      return {
+        server: {
+          allowedHosts: ["admin.thethaogiaxuong.store"],
+        },
+      }
+    },
+  },
 })

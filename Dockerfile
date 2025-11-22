@@ -14,10 +14,12 @@ RUN yarn install
 COPY . .
 
 # Fix line endings for start.sh and make it executable
-RUN sed -i 's/\r$//' ./start.sh && chmod +x ./start.sh
+# Use tr to remove carriage returns (works better in Alpine)
+RUN tr -d '\r' < ./start.sh > ./start.sh.tmp && mv ./start.sh.tmp ./start.sh && chmod +x ./start.sh
 
 # Expose the port Medusa runs on
 EXPOSE 9000
 
 # Start with migrations and then the development server
-CMD ["./start.sh"]
+# Explicitly use sh to run the script
+CMD ["sh", "./start.sh"]
